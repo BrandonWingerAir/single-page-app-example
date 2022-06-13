@@ -1,3 +1,5 @@
+import Home from './views/Home.js';
+
 const navigateTo = url => {
     history.pushState(null, null, url);
     router();
@@ -5,7 +7,7 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view: () => console.log("Dashboard Page") },
+        { path: "/", view: Home },
         { path: "/posts", view: () => console.log("Posts Page") },
         { path: "/settings", view: () => console.log("Settings Page") }
     ];
@@ -26,8 +28,12 @@ const router = async () => {
         };
     }
 
-    console.log(currentRoute.route.view());
+    const view = new currentRoute.route.view();
+
+    document.querySelector("#app").innerHTML = await view.getHtml();
 };
+
+window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
