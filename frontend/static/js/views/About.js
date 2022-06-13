@@ -1,8 +1,8 @@
 import AbstractHead from './HeadAbstract.js';
 
 export default class extends AbstractHead {
-    constructor() {
-        super();
+    constructor(params) {
+        super(params);
         this.setTitle("About");
     }
 
