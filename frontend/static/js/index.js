@@ -1,4 +1,6 @@
 import Home from './views/Home.js';
+import Posts from './views/Posts.js';
+import About from './views/About.js';
 
 const navigateTo = url => {
     history.pushState(null, null, url);
@@ -8,8 +10,8 @@ const navigateTo = url => {
 const router = async () => {
     const routes = [
         { path: "/", view: Home },
-        { path: "/posts", view: () => console.log("Posts Page") },
-        { path: "/settings", view: () => console.log("Settings Page") }
+        { path: "/posts", view: Posts },
+        { path: "/settings", view: About }
     ];
 
     const checkRoutes = routes.map(route => {

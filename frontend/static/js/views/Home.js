@@ -1,4 +1,4 @@
-import AbstractHead from './AbstractHead.js';
+import AbstractHead from './HeadAbstract.js';
 
 export default class extends AbstractHead {
     constructor() {
@@ -8,12 +8,12 @@ export default class extends AbstractHead {
 
     async getHtml() {
         return `
-            <h1>Welcome</h1>
+            <h1>Home</h1>
             <p>
                 Fugiat voluptate et nisi Lorem cillum anim sit do eiusmod occaecat irure do. Reprehenderit anim fugiat sint exercitation consequat. Sit anim laborum sit amet Lorem adipisicing ullamco duis. Anim in do magna ea pariatur et.
             </p>
             <p>
-                <a href="/posts" data-link>View recent posts</a>.
+                <a href="/posts" data-link>Check out recent posts</a>.
             </p>
         `;
     }
